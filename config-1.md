@@ -1,31 +1,39 @@
+# Konfigurasi CodeIgniter 1
+
 1. Buat tutorial configurasi CI v.3.0.3
 	
 	a. extrack ci.zip ke localhost 
-	`# unzip CodeIginiter*.zip /var/www 
 	
+	`# unzip CodeIginiter*.zip /var/www` 
 	
-	b. # chmod 755 -R <Ci Path>
+	b. `# chmod 755 -R <Ci Path>`
 	
 	c. [http://localhost/ci/index.php/Welcome](http://localhost/ci/index.php/Welcome)
 	
-	d. ubah file > ci/application/config/autoload.php
+	d. ubah file `ci/application/config/autoload.php`
 
 ```
-$autoload['libraries'] = array('database','session','Template');// sementara ini dulu librarinya
-$autoload['helper'] = array('url','form');// sementara ini dulu helpernya
+$autoload['libraries'] = array('database','session','Template'); // sementara ini dulu librarinya
+$autoload['helper'] = array('url','form'); // sementara ini dulu helpernya
 ```
-	e. ubah file > ci/application/config/config.php
+	e. ubah file `<path codeigniter>/application/config/config.php`
 ```
 $config['base_url'] = 'http://localhost/ci/';// sesuai nama folder projek
 $config['index_page'] = '';// kosongkan
 ```
 
 	f. ubah file > ci/application/config/database.php
-	ubah username, password, nama database, hostnya
 	
-	g. buat file Template.php di ci/application/libraries
+	ubah:
+	- username 
+	- password
+	- nama database
+	- host
+	
+	g. buat file *Template.php* di ci/application/libraries
 
-isinya
+isinya:
+
 ```
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 

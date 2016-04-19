@@ -1,6 +1,6 @@
-# Konfigurasi CodeIgniter 1
+# Konfigurasi CodeIgniter
 
-1. Buat tutorial configurasi CI v.3.0.3
+## Tutorial configurasi CI v.3.0.3
 	
 	a. extrack ci.zip ke localhost 
 	
@@ -56,3 +56,39 @@ class Template {
 }
 
 ```
+
+## Tutorial menghapus index.php dari CI
+
+
+ikutin aja yg disini :  `https://github.com/gandhi-wibowo/bookmark/blob/master/note_ci`
+kalo bukan linux user, pada OOT gk usah di ikutin
+
+3. Buat tutorial penerapan Template Bootstrap ke CI
+Ok, disini ane anggep tutorial yg ke 1 and ke 2 udah di kerjain !
+
+a. donlot templatenya, ane pake adminLTE "bisa dua template
+b. buat folder template di dalam folder ci
+c. pastekan folder template ke dalam folder template
+d. copy file index dari templatenya
+e. hapus yang di anggap tidak perlu
+f. untuk url dari css / js, ubah menjadi <?php echo base_url(); ?>template/dan seterusnya
+g. sisipkan <?php echo $contents; ?> untuk menampilkan data yang ingin di tampilkan
+example
+<html>
+	<head>
+	<title>Codeigniter</title>
+	</head>
+	<body>
+	<?php echo $contents; ?>
+	</body>
+</html>
+
+saya harap paham !
+
+h. copykan file sebelumnya ke dalam /ci/application/views
+i. penggunaannya
+$this->template->load('templateadmin','Admin/Kategori/lihat',$data);
+keterangan !
+templateadmin : nama file yg di buat dari urutan #2.d
+Admin/Kategori/lihat : lihat adalah nama file view yang akan digunakan untuk menampilkan data dari variable $data
+yang kemudian akan di tampilkan pada <?php echo $contents; ?> dari tutorial urutan #2.g
